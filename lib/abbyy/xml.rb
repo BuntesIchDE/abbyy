@@ -28,6 +28,8 @@ module Abbyy
         task[:id] = xml_data.attributes["id"]
         task[:status] = xml_data.attributes["status"]
         task[:resultUrl] = xml_data.attributes["resultUrl"]
+        task[:resultUrl2] = xml_data.attributes["resultUrl2"] rescue nil
+        task[:resultUrl3] = xml_data.attributes["resultUrl3"] rescue nil
         task[:estimatedProcessingTime] = xml_data.attributes["estimatedProcessingTime"]
         task[:description] = xml_data.attributes["description"]
         task[:error] = xml_data.attributes["error"]

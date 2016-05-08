@@ -34,8 +34,8 @@ module Abbyy
     end
 
     # http://ocrsdk.com/documentation/apireference/processDocument/
-    def process_document(task_id = task[:id])
-      RestClient.get("#{url}/processDocument?taskId=#{task_id}")
+    def process_document(task_id, options={})
+      RestClient.get("#{url}/processDocument", params: options.merge(taskId: task_id || task[:id]))
     end
 
     # http://ocrsdk.com/documentation/apireference/processFields/
